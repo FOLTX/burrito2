@@ -1,0 +1,131 @@
+/* === PALETA ===
+Naranja: #eb5222
+Azul: #0191cc
+Gris claro: #f2f2f3
+Verde: #679a3f
+Blanco: #ffffff
+*/
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background-color: #f2f2f3;
+  color: #333;
+}
+
+/* ===== Header ===== */
+.header {
+  background-color: #0191cc;
+  color: #ffffff;
+  padding: 1em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header .logo {
+  width: 60px;
+  border-radius: 50%;
+}
+
+.header nav a {
+  color: #ffffff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.header nav a:hover {
+  color: #eb5222;
+}
+
+.btn-login {
+  background-color: #eb5222;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.btn-login:hover {
+  background-color: #679a3f;
+}
+
+/* ===== Hero ===== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero-img {
+  width: 300px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.hero-text {
+  max-width: 500px;
+  margin: 10px;
+}
+
+.hero-text h2 {
+  color: #0191cc;
+}
+
+/* ===== Comentarios ===== */
+.comments {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f2f2f3;
+}
+
+.comment-box textarea {
+  width: 80%;
+  height: 100px;
+  border: 2px solid #0191cc;
+  border-radius: 10px;
+  padding: 10px;
+  resize: none;
+}
+
+.comment-box button {
+  background-color: #eb5222;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.comment-box button:hover {
+  background-color: #679a3f;
+}
+
+.ratings {
+  margin-top: 20px;
+  color: #679a3f;
+  font-weight: bold;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background-color: #0191cc;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.footer a {
+  color: #eb5222;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #ffffff;
+}
