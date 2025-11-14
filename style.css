@@ -19,6 +19,9 @@
    RESET & BASE
    =========================== */
 *{box-sizing:border-box}
+html {
+  scroll-behavior: smooth;
+}
 html,body{height:100%}
 
 /*FONDO DE LA SEGUNDA PARTE DE LA PAGINA */
@@ -403,3 +406,4 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
