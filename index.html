@@ -452,111 +452,60 @@
   <!-- ===========================
        SCRIPTS: INTERACTIVIDAD Y STORAGE
        =========================== -->
-  <script>
-    /* -----------------------
-       Menú móvil simple
-       ----------------------- */
+<script>
+    /* Menú responsive */
     function toggleMenu(btn){
-      const nav = document.querySelector('.nav-links');
-      if(!nav) return;
-      if(nav.style.display === 'flex'){ nav.style.display='none'; btn.textContent='☰' }
-      else{ nav.style.display='flex'; nav.style.flexDirection='column'; nav.style.gap='0'; nav.style.alignItems='center'; btn.textContent='✕' }
-    }
-
-    /* -----------------------
-       COMMENTS & RATINGS (simulado)
-       - Guarda en localStorage
-       - Actualiza promedio y UI
-       ----------------------- */
-
-    const STORAGE_KEY = 'burrito_comments_v1';
-
-    function loadComments(){
-      try{
-        const raw = localStorage.getItem(STORAGE_KEY);
-        return raw ? JSON.parse(raw) : [];
-      }catch(e){ console.error('parse err',e); return []}
-    }
-
-    function saveComments(list){
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
-    }
-
-    function formatStarsHtml(n){
-      // retorna ★★★★★ con recorte por CSS en avg, aqui usamos repetición simple para cada comentario
-      return '★'.repeat(n) + '<span style="color:var(--star-gray)">' + '☆'.repeat(5-n) + '</span>';
-    }
-
-    function renderComments(){
-      const list = loadComments();
-      const container = document.getElementById('comments-list');
-      container.innerHTML = '';
-      if(!list.length){
-        container.innerHTML = '<div class="card small-muted" style="padding:12px;border-radius:10px">Aún no hay comentarios. Sé el primero en opinar.</div>';
-      }else{
-        list.slice().reverse().forEach(c => {
-          const el = document.createElement('div');
-          el.className = 'card';
-          el.style.marginTop = '10px';
-          el.innerHTML = `
-            <div style="display:flex;justify-content:space-between;align-items:center">
-              <div style="font-weight:700">${escapeHtml(c.user||'Anónimo')}</div>
-              <div style="color:var(--star-yellow)">${formatStarsHtml(c.rating)}</div>
-            </div>
-            <div style="margin-top:8px;color:rgba(255,255,255,0.9)">${escapeHtml(c.text)}</div>
-          `;
-          container.appendChild(el);
-        });
+      const links = document.querySelector('.nav-links');
+      if(links.style.display === 'flex'){
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+        links.style.flexDirection = 'column';
+        links.style.background = 'var(--nav-gray)';
+        links.style.padding = '12px';
       }
-      renderAverage();
     }
 
-    function renderAverage(){
-      const list = loadComments();
-      const avgScoreEl = document.getElementById('avg-score');
-      const starsInner = document.getElementById('stars-inner');
-      if(!list.length){
-        avgScoreEl.textContent = '(0.0)';
-        // width 0
-        starsInner.style.width = '0%';
-        return;
-      }
-      const total = list.reduce((s,i)=>s + Number(i.rating),0);
-      const avg = total / list.length;
-      avgScoreEl.textContent = `(${avg.toFixed(1)})`;
-      // calcular porcentaje para 5 estrellas
-      const pct = (avg / 5) * 100;
-      starsInner.style.width = pct + '%';
-    }
-
+    /* Sistema de calificaciones */
+    let ratings = [];
     function submitComment(){
-      const user = document.getElementById('input-user').value.trim() || 'Anónimo';
-      const text = document.getElementById('input-comment').value.trim();
-      const rating = parseInt(document.getElementById('input-rating').value,10);
-      if(!text){
-        alert('Escribe un comentario antes de enviar.');
+      const user = document.getElementById("input-user").value.trim();
+      const comment = document.getElementById("input-comment").value.trim();
+      const rating = parseInt(document.getElementById("input-rating").value);
+
+      if(!user || !comment){
+        alert("Completa tu nombre y comentario.");
         return;
       }
-      const list = loadComments();
-      list.push({user,text,rating,ts:Date.now()});
-      saveComments(list);
-      // limpiar campos
-      document.getElementById('input-comment').value = '';
-      document.getElementById('input-rating').value = '5';
-      renderComments();
-      // scroll a lista
-      setTimeout(()=>document.getElementById('comments-list').scrollIntoView({behavior:'smooth'}),200);
+
+      ratings.push(rating);
+      updateAverage();
+
+      const list = document.getElementById("comments-list");
+      const div = document.createElement("div");
+      div.className = "card";
+      div.style.marginBottom = "12px";
+      div.innerHTML = `
+        <strong>${user}</strong> — <span style="color:var(--star-yellow)">★`.repeat(rating) +
+        `<span style="color:var(--star-gray)">☆`.repeat(5-rating) +
+        `</span><br>
+        <p style="margin:6px 0 0">${comment}</p>
+      `;
+      list.prepend(div);
+
+      document.getElementById("input-user").value = "";
+      document.getElementById("input-comment").value = "";
+      document.getElementById("input-rating").value = "5";
     }
 
-    function escapeHtml(s){
-      return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+    function updateAverage(){
+      const avg = ratings.reduce((a,b)=>a+b,0) / ratings.length;
+      const percent = (avg/5)*100;
+
+      document.getElementById("avg-score").innerText = `(${avg.toFixed(1)})`;
+      document.getElementById("stars-inner").style.width = percent + "%";
     }
-
-    // inicializar
-    document.addEventListener('DOMContentLoaded', function(){
-      renderComments();
-    });
-
   </script>
+
 </body>
 </html>
