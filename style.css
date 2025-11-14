@@ -164,7 +164,7 @@ section.features{padding:56px 0}
   border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;
   box-shadow: 0 8px 24px rgba(34, 34, 59, 0.12);
 }
-/* La regla ".illustration svg" vieja se borró de aquí */
+.illustration svg{width:85%;height:auto;display:block}
 
 /* Estilos para SVGs de ilustraciones */
 .illustration svg [fill="#fff"] { fill: #f2f2f3; }
@@ -173,33 +173,19 @@ section.features{padding:56px 0}
 .illustration svg [fill="#e9e6e2"] { fill: #f2f2f3; }
 .illustration svg [fill="#1a1a1a"] { fill: #22223b; }
 
-/* REGLA CORREGIDA: 
-  Aplica a SVG y a IMG para que ambos se vean bien.
-*/
-.illustration svg,
-.illustration img {
-  width: 85%;
-  height: auto;
-  display: block;
-  margin: 0 auto; /* Añadido para centrar la imagen */
-}
-
 /* Two Col Second */
 .two-col-second{
   margin-top: 36px;
 }
 
-/* REGLA ELIMINADA:
-  Se borró ".illustration-light" de aquí
-  porque ya no la necesitas.
-*/
-
+.illustration-light{
+  background: #ffffff;
+}
 
 /* ===========================
    RATINGS
    =========================== */
 .ratings{padding:48px 0}
-/* ... (El resto del CSS sigue igual) ... */
 .ratings h2{ color: #22223b; }
 
 .ratings-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
