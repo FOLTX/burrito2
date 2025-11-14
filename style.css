@@ -47,7 +47,7 @@ a:hover {
    =========================== */
    /*BARRA SUPERIOR DE LA PAGINA*/
 header.navbar{
-  background: #eb5222;
+  background: #800000;
   position:sticky;top:0;z-index:50;
   box-shadow: 0 8px 24px rgba(34, 34, 59, 0.12);
 }
@@ -403,3 +403,4 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
