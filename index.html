@@ -1,119 +1,374 @@
 <!DOCTYPE html>
 <html lang="es">
+<link rel="stylesheet" href="style.css">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Burrito Go UNMSM</title>
 
-  <!-- Fuentes elegantes -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f7f2e9; /* Beige suave */
-      color: #1a1a1a;
-    }
-
-    header {
-      background-color: #7a0019; /* Rojo San Marcos */
-      padding: 20px;
-      text-align: center;
-      color: white;
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-    }
-
-    nav {
-      background-color: #c2a878; /* Dorado suave */
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    nav a {
-      color: #1a1a1a;
-      font-weight: 600;
-      text-decoration: none;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .hero {
-      padding: 50px 20px;
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #7a0019;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .imagenes {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 30px 20px;
-    }
-
-    .imagenes img {
-      width: 300px;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-    }
-
-    footer {
-      background-color: #7a0019;
-      color: white;
-      padding: 15px;
-      text-align: center;
-      margin-top: 40px;
-      font-family: 'Inter', sans-serif;
-    }
-  </style>
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <header>
-    Burrito Go UNMSM
+
+  <!-- NAVBAR -->
+  <header class="navbar" role="banner">
+    <div class="nav-inner">
+      <a class="brand" href="#">
+        <!-- icono "pin burrito" simplificado SVG -->
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f08c00"/><stop offset="1" stop-color="#f45d2a"/></linearGradient></defs>
+          <path d="M32 2C20 2 10 12 10 24c0 13.6 16.4 33.6 19.2 36.8a3 3 0 0 0 4.6 0C37.6 57.6 54 37.6 54 24 54 12 44 2 32 2z" fill="url(#g)"/>
+          <circle cx="32" cy="24" r="7" fill="#fff"/>
+        </svg>
+        Burrito Go UNMSM
+      </a>
+
+      <nav class="nav-links" aria-label="Principal">
+        <a href="#about">Sobre Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu(this)">☰</button>
+    </div>
   </header>
 
-  <nav>
-    <a href="#">Inicio</a>
-    <a href="#">Menú</a>
-    <a href="#">Ubicación</a>
-    <a href="#">Contacto</a>
-  </nav>
+  <!-- HERO -->
+  <section class="hero" role="region" aria-label="Hero">
+    <div class="hero-grid">
+      <div>
+        <h1>Transporte Universitario Eficiente</h1>
+        <p>Bienvenido al sistema de localización del Burrito Interno UNMSM. Ofrecemos un servicio de transporte interno confiable y seguro para estudiantes, con horarios accesibles y un sistema de calificación para mejorar continuamente.</p>
+        <a class="btn" href="#contacto">Contacto</a>
 
-  <section class="hero">
-    <h1>El Burrito Más Rápido de la UNMSM</h1>
-    <p>Realiza tu pedido en tiempo real y encuentra al repartidor dentro del campus de San Marcos.</p>
+        <!-- Testimonial pequeño -->
+        <div class="hero-testimonial">
+          <div class="stars-row" aria-hidden="true">
+            <!-- 4 llenas + 1 vacía -->
+            ★★★★<span class="empty">☆</span>
+          </div>
+          <div class="testimonial-box">
+            <div class="small-muted">Usuarios felices · Servicio confiable</div>
+            <blockquote>"El sistema es muy fácil de usar y confiable."</blockquote>
+            <div class="testimonial-author">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="opacity:0.95"><circle cx="12" cy="8" r="3" fill="white"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="white" /></svg>
+              <span>Salazar Mora</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: imagen / pequeño resumen -->
+      <aside aria-hidden="true" style="text-align:center">
+        <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:14px;max-width:360px;margin:0 auto">
+          <img src="https://i.imgur.com/g0tQkYc.png" alt="Vista previa app - móvil" style="width:100%;border-radius:10px;display:block">
+        </div>
+      </aside>
+    </div>
   </section>
 
-  <section class="imagenes">
-    <!-- AQUÍ CAMBIAS LAS IMÁGENES LUEGO -->
-    <img src="img1.jpg" alt="Imagen 1">
-    <img src="img2.jpg" alt="Imagen 2">
-    <img src="img3.jpg" alt="Imagen 3">
+  <!-- MOBILE PREVIEW (Captura 2) -->
+  <section class="mobile-preview" aria-label="Vista móvil">
+    <div class="container">
+      <div class="phone-frame" role="img" aria-label="Pantalla de ejemplo">
+        <img src="https://i.imgur.com/g0tQkYc.png" alt="App Burrito Go - mockup">
+      </div>
+    </div>
   </section>
 
-  <footer>
-    © 2025 Burrito Go UNMSM — Todos los derechos reservados.
+  <!-- FEATURES: Ventajas (Captura 3) -->
+  <section class="features container" id="about" aria-labelledby="features-title">
+    <div class="section-header">
+      <h2 id="features-title">Ventajas del servicio</h2>
+      <p>Descubre por qué elegirnos</p>
+    </div>
+
+    <div class="two-col" aria-hidden="false">
+      <div class="left">
+        <h3>Localización precisa</h3>
+        <p>La herramienta utiliza información actualizada para mostrar con exactitud la ubicación del Burrito Interno en el mapa, ofreciendo una experiencia confiable y clara.</p>
+      </div>
+      <div class="right">
+        <div class="illustration" aria-hidden="true">
+          <!-- Ilustración simple tipo mapa (SVG) -->
+          <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
+            <rect x="6" y="8" width="188" height="124" rx="8" fill="#fff" opacity="0.12"/>
+            <g transform="translate(18,14)" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="2">
+              <path d="M0 20 L50 6 L80 30 L120 8 L160 30" stroke-linecap="round"/>
+              <circle cx="120" cy="8" r="6" fill="#8B0000" stroke="none"/>
+            </g>
+            <g transform="translate(24,22) scale(.8)">
+              <rect x="8" y="42" width="60" height="28" rx="4" fill="#fff" opacity="0.1"></rect>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ahorro de tiempo (Captura 4) -->
+    <div class="two-col" style="margin-top:36px">
+      <div class="left">
+        <h3>Ahorro de tiempo</h3>
+        <p>Consulta fácilmente la posición actual del transporte y organiza mejor tus horarios para llegar puntual a clases o actividades dentro del campus.</p>
+      </div>
+      <div class="right">
+        <div class="illustration" aria-hidden="true" style="background:var(--illustration-bg)">
+          <!-- ícono person running -->
+          <svg viewBox="0 0 100 100" width="80" height="80" fill="#1a1a1a" aria-hidden="true">
+            <rect x="6" y="10" width="88" height="72" rx="6" fill="#e9e6e2"/>
+            <g transform="translate(18,22)" fill="#1a1a1a">
+              <path d="M20 10c3 0 6 3 6 6 0 3-2 5-5 6l-3 8-6 1 3-9c2-3 2-6 2-9 0-2 1-3 3-3z"/>
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RATINGS (Captura 5) -->
+  <section class="ratings container" aria-labelledby="ratings-title">
+    <h2 id="ratings-title" style="color:var(--white)">Sistema de calificación</h2>
+
+    <div style="display:flex;align-items:center;gap:16px;margin-top:10px">
+      <div style="font-weight:700;color:var(--white)">Promedio:</div>
+      <div class="avg-stars" title="Promedio" aria-hidden="true">
+        <div class="stars-outer">★★★★★</div>
+        <div class="stars-inner" id="stars-inner">★★★★★</div>
+      </div>
+      <div id="avg-score" class="small-muted" style="margin-left:8px;color:rgba(255,255,255,0.9)">(0.0)</div>
+    </div>
+
+    <div style="height:18px"></div>
+
+    <div class="ratings-grid">
+      <!-- left: las 5 filas con emojis y estrellas -->
+      <div>
+        <!-- fila 5 -->
+        <div class="rating-row">
+          <div class="rating-emoji" aria-hidden="true">😁</div>
+          <div>
+            <div style="font-weight:700">Excelente</div>
+            <div class="rating-stars" aria-hidden="true">★★★★★</div>
+          </div>
+        </div>
+
+        <!-- fila 4 -->
+        <div class="rating-row" style="margin-top:12px">
+          <div class="rating-emoji">🙂</div>
+          <div>
+            <div style="font-weight:700">Muy bueno</div>
+            <div class="rating-stars"><span>★★★★</span><span class="off">☆</span></div>
+          </div>
+        </div>
+
+        <!-- fila 3 -->
+        <div class="rating-row" style="margin-top:12px">
+          <div class="rating-emoji">😐</div>
+          <div>
+            <div style="font-weight:700">Regular</div>
+            <div class="rating-stars"><span>★★★</span><span class="off">☆☆</span></div>
+          </div>
+        </div>
+
+        <!-- fila 2 -->
+        <div class="rating-row" style="margin-top:12px">
+          <div class="rating-emoji">☹️</div>
+          <div>
+            <div style="font-weight:700">Insuficiente</div>
+            <div class="rating-stars"><span>★★</span><span class="off">☆☆☆</span></div>
+          </div>
+        </div>
+
+        <!-- fila 1 -->
+        <div class="rating-row" style="margin-top:12px">
+          <div class="rating-emoji">😡</div>
+          <div>
+            <div style="font-weight:700">Malo</div>
+            <div class="rating-stars"><span>★</span><span class="off">☆☆☆☆</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right: explicación y caja de envío -->
+      <div>
+        <div class="ratings-info">
+          <h3 style="margin-top:0">Sistema de calificación</h3>
+          <p>Los estudiantes pueden calificar el servicio, lo que nos ayuda a mejorar continuamente. Las calificaciones se muestran en tiempo real para mantener la transparencia.</p>
+
+          <!-- Formulario de comentarios (simulado) -->
+          <div style="margin-top:14px">
+            <label class="small-muted">Usuario (simulado)</label>
+            <div class="form-row" style="margin-top:8px;">
+              <input id="input-user" type="text" placeholder="Tu nombre (ej: Juan Pérez)">
+            </div>
+
+            <label class="small-muted" style="margin-top:10px;display:block">Comentario</label>
+            <div style="margin-top:8px">
+              <textarea id="input-comment" placeholder="Escribe tu opinión..."></textarea>
+            </div>
+
+            <label class="small-muted" style="margin-top:10px;display:block">Calificación</label>
+            <div style="margin-top:8px" class="form-row">
+              <select id="input-rating">
+                <option value="5">5 ★★★★★</option>
+                <option value="4">4 ★★★★☆</option>
+                <option value="3">3 ★★★☆☆</option>
+                <option value="2">2 ★★☆☆☆</option>
+                <option value="1">1 ★☆☆☆☆</option>
+              </select>
+              <button class="submit" onclick="submitComment()">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- lista de comentarios -->
+    <div id="comments-list" style="margin-top:20px"></div>
+
+  </section>
+
+  <!-- TESTIMONIO GRANDE (Captura 6) -->
+  <section class="big-testimonial" aria-label="testimonio">
+    <div class="inner">
+      <p class="quote">"Me encanta cómo puedo ver la ubicación del transporte en tiempo real y planificar mi día de manera más eficiente. El sistema de calificación también es una gran adición."</p>
+      <div style="display:flex;justify-content:center;align-items:center;gap:10px">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" fill="#fff"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#fff"/></svg>
+        <div style="font-weight:700;color:var(--white)">Graham Thompson</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA (Captura 7) -->
+  <section class="cta" aria-label="Únete">
+    <div class="cta-card">
+      <h2>Únete al Burri<span>Go</span></h2>
+      <p>"El Burrito Interno UNMSM ha mejorado mi experiencia universitaria al ofrecer un transporte seguro y eficiente. Recomiendo este servicio a todos los estudiantes." - Colan Trujillo</p>
+      <a class="btn" href="#contacto">Contacto</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contacto" role="contentinfo">
+    <div class="container">
+      <div class="socials" aria-hidden="false">
+        <a href="#" aria-label="Instagram">Instagram</a>
+        <a href="#" aria-label="Facebook">Facebook</a>
+        <a href="#" aria-label="X">X</a>
+        <a href="#" aria-label="TikTok">TikTok</a>
+      </div>
+      <div class="copyright">© 2025 Burrito Go UNMSM. Todos los derechos reservados.</div>
+    </div>
   </footer>
 
+  <!-- ===========================
+       SCRIPTS: INTERACTIVIDAD Y STORAGE
+       =========================== -->
+  <script>
+    /* -----------------------
+       Menú móvil simple
+       ----------------------- */
+    function toggleMenu(btn){
+      const nav = document.querySelector('.nav-links');
+      if(!nav) return;
+      if(nav.style.display === 'flex'){ nav.style.display='none'; btn.textContent='☰' }
+      else{ nav.style.display='flex'; nav.style.flexDirection='column'; nav.style.gap='0'; nav.style.alignItems='center'; btn.textContent='✕' }
+    }
+
+    /* -----------------------
+       COMMENTS & RATINGS (simulado)
+       - Guarda en localStorage
+       - Actualiza promedio y UI
+       ----------------------- */
+
+    const STORAGE_KEY = 'burrito_comments_v1';
+
+    function loadComments(){
+      try{
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      }catch(e){ console.error('parse err',e); return []}
+    }
+
+    function saveComments(list){
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+    }
+
+    function formatStarsHtml(n){
+      // retorna ★★★★★ con recorte por CSS en avg, aqui usamos repetición simple para cada comentario
+      return '★'.repeat(n) + '<span style="color:var(--star-gray)">' + '☆'.repeat(5-n) + '</span>';
+    }
+
+    function renderComments(){
+      const list = loadComments();
+      const container = document.getElementById('comments-list');
+      container.innerHTML = '';
+      if(!list.length){
+        container.innerHTML = '<div class="card small-muted" style="padding:12px;border-radius:10px">Aún no hay comentarios. Sé el primero en opinar.</div>';
+      }else{
+        list.slice().reverse().forEach(c => {
+          const el = document.createElement('div');
+          el.className = 'card';
+          el.style.marginTop = '10px';
+          el.innerHTML = `
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <div style="font-weight:700">${escapeHtml(c.user||'Anónimo')}</div>
+              <div style="color:var(--star-yellow)">${formatStarsHtml(c.rating)}</div>
+            </div>
+            <div style="margin-top:8px;color:rgba(255,255,255,0.9)">${escapeHtml(c.text)}</div>
+          `;
+          container.appendChild(el);
+        });
+      }
+      renderAverage();
+    }
+
+    function renderAverage(){
+      const list = loadComments();
+      const avgScoreEl = document.getElementById('avg-score');
+      const starsInner = document.getElementById('stars-inner');
+      if(!list.length){
+        avgScoreEl.textContent = '(0.0)';
+        // width 0
+        starsInner.style.width = '0%';
+        return;
+      }
+      const total = list.reduce((s,i)=>s + Number(i.rating),0);
+      const avg = total / list.length;
+      avgScoreEl.textContent = `(${avg.toFixed(1)})`;
+      // calcular porcentaje para 5 estrellas
+      const pct = (avg / 5) * 100;
+      starsInner.style.width = pct + '%';
+    }
+
+    function submitComment(){
+      const user = document.getElementById('input-user').value.trim() || 'Anónimo';
+      const text = document.getElementById('input-comment').value.trim();
+      const rating = parseInt(document.getElementById('input-rating').value,10);
+      if(!text){
+        alert('Escribe un comentario antes de enviar.');
+        return;
+      }
+      const list = loadComments();
+      list.push({user,text,rating,ts:Date.now()});
+      saveComments(list);
+      // limpiar campos
+      document.getElementById('input-comment').value = '';
+      document.getElementById('input-rating').value = '5';
+      renderComments();
+      // scroll a lista
+      setTimeout(()=>document.getElementById('comments-list').scrollIntoView({behavior:'smooth'}),200);
+    }
+
+    function escapeHtml(s){
+      return String(s).replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;');
+    }
+
+    // inicializar
+    document.addEventListener('DOMContentLoaded', function(){
+      renderComments();
+    });
+
+  </script>
 </body>
 </html>
