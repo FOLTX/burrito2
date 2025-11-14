@@ -1,118 +1,274 @@
-/* ===============================
-   TIPOGRAFÍA Y VARIABLES DE MARCA
-   =============================== */
+/* style-uni.css
+   Paleta UNMSM (Paleta 1):
+   - Rojo UNMSM:   #7A0A0A
+   - Dorado suave: #C6A667
+   - Crema claro:  #F8F4E9
+   - Gris oscuro:  #2E2E2E
+   - Blanco:       #FFFFFF
+*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
-
+/* -------------------------
+   Reset / base overrides
+   ------------------------- */
 :root {
-  --granate: #7A0000;
-  --granate-light: #9b0000;
-  --dorado: #C6A667;
-  --fondo: #0D1117;
-  --texto: #E6E6E6;
-  --texto-suave: #CCCCCC;
+  --um-red:   #7A0A0A;
+  --um-gold:  #C6A667;
+  --um-cream: #F8F4E9;
+  --um-gray:  #2E2E2E;
+  --um-white: #FFFFFF;
 }
 
-/* ======== RESETEO ======== */
-body {
-  margin: 0;
-  font-family: "Montserrat", sans-serif;
-  background: var(--fondo);
-  color: var(--texto);
+/* make sure body bg and text color override any inline base vars */
+html, body {
+  background: var(--um-cream) !important;
+  color: var(--um-gray) !important;
+  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.45 !important;
 }
 
-/* ======== NAVBAR ======== */
-header {
-  background: var(--fondo);
-  padding: 20px 0;
-  border-bottom: 2px solid var(--granate);
+/* Container max width (keep original size) */
+.container {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 5% !important;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
+/* -------------------------
+   NAVBAR
+   ------------------------- */
+/* header.navbar exists in your HTML */
+header.navbar {
+  background: var(--um-red) !important;
+  border-bottom: 3px solid rgba(198,166,103,0.08) !important;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12) !important;
 }
 
-nav ul li a {
-  color: var(--dorado);
-  text-decoration: none;
-  font-weight: 600;
-  transition: .3s ease;
-  font-size: 17px;
+/* Brand text + SVG color */
+.brand, .brand * {
+  color: var(--um-white) !important;
+  font-weight: 700 !important;
+}
+.brand svg { filter: none !important; }
+
+/* nav links */
+.nav-links a {
+  color: var(--um-white) !important;
+  font-weight: 600 !important;
+  opacity: 0.95 !important;
+  padding: 6px 8px !important;
+  border-radius: 6px !important;
+  transition: background .14s ease, color .14s ease !important;
+}
+.nav-links a:hover {
+  background: rgba(255,255,255,0.06) !important;
+  color: var(--um-cream) !important;
 }
 
-nav ul li a:hover {
-  color: #fff;
-}
+/* mobile toggle */
+.nav-toggle { color: var(--um-white) !important; }
 
-/* ======== HERO ======== */
+/* -------------------------
+   HERO
+   ------------------------- */
+/* keep hero background image but apply warm overlay */
 .hero {
-  height: 85vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  padding: 0 20px;
+  background-image: linear-gradient(rgba(122,10,10,0.65), rgba(46,46,46,0.18)), url('https://i.imgur.com/1n8q8O5.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  padding: 60px 0 80px !important;
 }
 
+/* hero text */
 .hero h1 {
-  font-size: 48px;
-  color: var(--dorado);
-  margin-bottom: 10px;
-  font-weight: 800;
+  color: var(--um-white) !important;
+  font-weight: 800 !important;
+  font-size: 2.8rem !important;
+  line-height: 1.02 !important;
+  margin-bottom: 14px !important;
 }
-
 .hero p {
-  font-size: 20px;
-  color: var(--texto);
+  color: rgba(255,255,255,0.94) !important;
+  font-size: 1.05rem !important;
+  max-width: 680px !important;
 }
 
-/* ======== BOTONES ======== */
+/* primary button */
 .btn {
-  padding: 12px 25px;
-  background: var(--granate);
-  color: #fff;
-  border-radius: 10px;
-  border: none;
-  font-size: 18px;
-  font-weight: 600;
-  transition: .3s;
-  cursor: pointer;
+  background: var(--um-red) !important;
+  color: var(--um-white) !important;
+  box-shadow: 0 8px 26px rgba(122,10,10,0.16) !important;
+  border-radius: 10px !important;
+  font-weight: 700 !important;
 }
-
 .btn:hover {
-  background: var(--granate-light);
+  transform: translateY(-3px) !important;
+  filter: brightness(1.06) !important;
 }
 
-/* ======== SECCIONES ======== */
-.section {
-  padding: 60px 20px;
-  text-align: center;
+/* small testimonial */
+.hero-testimonial .testimonial-box blockquote {
+  border-left: 3px solid var(--um-gold) !important;
+  color: rgba(255,255,255,0.95) !important;
 }
 
-.section h2 {
-  color: var(--dorado);
-  font-size: 32px;
-  font-weight: 800;
+/* stars color */
+.stars-row { color: var(--um-gold) !important; }
+.stars-row .empty { color: rgba(255,255,255,0.32) !important; }
+
+/* -------------------------
+   MOBILE PREVIEW
+   ------------------------- */
+.mobile-preview { padding: 48px 0 !important; text-align: center !important; }
+.phone-frame {
+  background: transparent !important;
+  border-radius: 20px !important;
+  padding: 14px !important;
+  border: 1px solid rgba(46,46,46,0.06) !important;
+}
+.phone-frame img { box-shadow: 0 18px 50px rgba(0,0,0,0.25) !important; }
+
+/* -------------------------
+   FEATURES / ILLUSTRATIONS
+   ------------------------- */
+.section-header h2 {
+  color: var(--um-gold) !important;
+}
+.section-header p { color: rgba(255,255,255,0.9) !important; }
+
+/* illustration background */
+.illustration {
+  background: rgba(246,239,230,0.06) !important; /* gentle cream tint */
+  border-radius: 12px !important;
 }
 
-.section p {
-  max-width: 800px;
-  margin: auto;
-  font-size: 18px;
-  color: var(--texto-suave);
+/* circle or map marker color inside svgs */
+.illustration svg circle, .illustration svg path[fill="#8B0000"] {
+  fill: var(--um-red) !important;
 }
 
-/* ======== FOOTER ======== */
-footer {
-  background: var(--fondo);
-  text-align: center;
-  padding: 20px;
-  border-top: 2px solid var(--granate);
-  color: var(--dorado);
-  font-size: 15px;
+/* left column headings and text */
+.two-col .left h3 { color: var(--um-white) !important; font-size: 1.35rem !important; }
+.two-col .left p  { color: rgba(255,255,255,0.92) !important; }
+
+/* -------------------------
+   RATINGS
+   ------------------------- */
+.ratings { padding: 48px 0 !important; }
+.rating-row { background: rgba(255,255,255,0.02) !important; border-radius: 10px !important; }
+
+/* rating info card */
+.ratings-info {
+  background: linear-gradient(180deg, rgba(46,46,46,0.98), rgba(36,36,36,0.95)) !important;
+  color: rgba(255,255,255,0.95) !important;
 }
+
+/* stars colors */
+.rating-stars { color: var(--um-gold) !important; }
+.rating-stars .off { color: rgba(255,255,255,0.28) !important; }
+
+/* avg stars widget */
+.avg-stars .stars-outer { color: rgba(255,255,255,0.28) !important; }
+.avg-stars .stars-inner { color: var(--um-gold) !important; }
+
+/* small-muted */
+.small-muted { color: rgba(255,255,255,0.8) !important; }
+
+/* -------------------------
+   BIG TESTIMONIAL
+   ------------------------- */
+.big-testimonial {
+  background: linear-gradient(180deg, rgba(122,10,10,0.98), rgba(46,46,46,0.9)) !important;
+  color: var(--um-white) !important;
+}
+.big-testimonial .inner p.quote { color: var(--um-cream) !important; }
+
+/* -------------------------
+   CTA CARD
+   ------------------------- */
+.cta-card {
+  background: linear-gradient(180deg, rgba(46,46,46,0.98), rgba(26,26,26,0.95)) !important;
+  border-radius: 20px !important;
+  color: rgba(255,255,255,0.95) !important;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.55) !important;
+}
+.cta-card h2 span { color: var(--um-red) !important; }
+
+/* subtle gold dotted accent (keeps existing pattern but tones it) */
+.cta::before {
+  background-image: radial-gradient(var(--um-gold) 0.6px, transparent 0.6px) !important;
+  opacity: 0.06 !important;
+}
+
+/* -------------------------
+   FOOTER
+   ------------------------- */
+footer.site-footer {
+  background: linear-gradient(180deg, rgba(46,46,46,0.96), rgba(36,36,36,0.98)) !important;
+  color: rgba(255,255,255,0.92) !important;
+  padding: 28px 0 !important;
+}
+
+/* socials buttons */
+.socials a {
+  background: rgba(255,255,255,0.03) !important;
+  color: var(--um-cream) !important;
+  padding: 8px 10px !important;
+  border-radius: 8px !important;
+}
+.socials a:hover { background: rgba(198,166,103,0.12) !important; color: var(--um-white) !important; }
+
+/* -------------------------
+   FORMS / INPUTS / BUTTONS
+   ------------------------- */
+.form-row input[type="text"],
+.form-row input[type="password"],
+textarea,
+select {
+  background: rgba(255,255,255,0.03) !important;
+  color: var(--um-white) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  border-radius: 8px !important;
+}
+
+.submit {
+  background: var(--um-red) !important;
+  color: var(--um-white) !important;
+  border-radius: 10px !important;
+  padding: 10px 16px !important;
+  font-weight: 700 !important;
+}
+.submit:hover { filter: brightness(1.06) !important; }
+
+/* textarea */
+textarea { min-height: 90px !important; resize: vertical !important; }
+
+/* card style override */
+.card { background: rgba(255,255,255,0.02) !important; }
+
+/* -------------------------
+   UTILITY (ensure visibility)
+   ------------------------- */
+.hidden { display: none !important; }
+.center { text-align: center !important; }
+
+/* -------------------------
+   Responsive tweaks (override internal breakpoints safely)
+   ------------------------- */
+@media (max-width:980px) {
+  .hero .hero-grid { grid-template-columns: 1fr !important; gap: 24px !important; text-align: center !important; }
+  .illustration { margin: 0 auto !important; }
+  .nav-links { display: none !important; }
+  .nav-toggle { display: block !important; }
+}
+@media (max-width:520px) {
+  .hero h1 { font-size: 1.8rem !important; }
+  .cta-card { padding: 22px !important; }
+  .illustration { padding: 12px !important; }
+}
+
+/* -------------------------
+   NOTES:
+   - Este CSS no modifica el HTML ni las etiquetas <img>.
+  
