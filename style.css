@@ -1,142 +1,118 @@
-/* === PALETA ELEGANTE SAN MARCOS ===
-Fondo oscuro: #0E0E10
-Granate institucional: #7A0000
-Dorado elegante: #C6A667
-Blanco: #FFFFFF
-Gris suave: #D9D9D9
-*/
+/* ===============================
+   TIPOGRAFÍA Y VARIABLES DE MARCA
+   =============================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
+
+:root {
+  --granate: #7A0000;
+  --granate-light: #9b0000;
+  --dorado: #C6A667;
+  --fondo: #0D1117;
+  --texto: #E6E6E6;
+  --texto-suave: #CCCCCC;
+}
+
+/* ======== RESETEO ======== */
 body {
-  font-family: 'Montserrat', sans-serif;
   margin: 0;
-  background-color: #0E0E10;
-  color: #D9D9D9;
+  font-family: "Montserrat", sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
 }
 
-/* ===== Header ===== */
-.header {
-  background-color: #0E0E10;
-  border-bottom: 2px solid #7A0000;
-  color: #FFFFFF;
-  padding: 1em 2em;
+/* ======== NAVBAR ======== */
+header {
+  background: var(--fondo);
+  padding: 20px 0;
+  border-bottom: 2px solid var(--granate);
+}
+
+nav ul {
+  list-style: none;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.header .logo {
-  width: 60px;
-  border-radius: 50%;
-  border: 2px solid #C6A667;
-}
-
-.header nav a {
-  color: #D9D9D9;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.header nav a:hover {
-  color: #C6A667;
-}
-
-.btn-login {
-  background-color: #7A0000;
-  padding: 8px 14px;
-  border-radius: 20px;
-  color: #FFFFFF;
-  transition: 0.3s;
-}
-
-.btn-login:hover {
-  background-color: #C6A667;
-  color: #0E0E10;
-}
-
-/* ===== Hero ===== */
-.hero {
-  display: flex;
-  flex-wrap: wrap;
-  background-color: #1A1A1D;
-  padding: 40px 20px;
-  align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-  border-bottom: 2px solid #7A0000;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
 }
 
-.hero-img {
-  width: 300px;
-  border-radius: 15px;
-  margin: 10px;
-  border: 3px solid #C6A667;
+nav ul li a {
+  color: var(--dorado);
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s ease;
+  font-size: 17px;
 }
 
-.hero-text {
-  max-width: 500px;
-  margin: 10px;
+nav ul li a:hover {
+  color: #fff;
 }
 
-.hero-text h2 {
-  color: #C6A667;
-}
-
-/* ===== Comentarios ===== */
-.comments {
+/* ======== HERO ======== */
+.hero {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   text-align: center;
-  padding: 40px 20px;
-  background-color: #0E0E10;
-  border-top: 2px solid #7A0000;
+  padding: 0 20px;
 }
 
-.comment-box textarea {
-  width: 80%;
-  height: 100px;
-  border: 2px solid #C6A667;
-  background-color: #1A1A1D;
-  color: #D9D9D9;
+.hero h1 {
+  font-size: 48px;
+  color: var(--dorado);
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 20px;
+  color: var(--texto);
+}
+
+/* ======== BOTONES ======== */
+.btn {
+  padding: 12px 25px;
+  background: var(--granate);
+  color: #fff;
   border-radius: 10px;
-  padding: 10px;
-  resize: none;
-}
-
-.comment-box button {
-  background-color: #7A0000;
-  color: #FFFFFF;
   border: none;
-  padding: 10px 20px;
-  margin-top: 10px;
-  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: .3s;
   cursor: pointer;
 }
 
-.comment-box button:hover {
-  background-color: #C6A667;
-  color: #0E0E10;
+.btn:hover {
+  background: var(--granate-light);
 }
 
-.ratings {
-  margin-top: 20px;
-  color: #C6A667;
-  font-weight: bold;
-}
-
-/* ===== Footer ===== */
-.footer {
-  background-color: #0E0E10;
-  color: #D9D9D9;
-  padding: 20px;
+/* ======== SECCIONES ======== */
+.section {
+  padding: 60px 20px;
   text-align: center;
-  border-top: 2px solid #7A0000;
 }
 
-.footer a {
-  color: #C6A667;
-  text-decoration: none;
+.section h2 {
+  color: var(--dorado);
+  font-size: 32px;
+  font-weight: 800;
 }
 
-.footer a:hover {
-  color: #FFFFFF;
+.section p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 18px;
+  color: var(--texto-suave);
 }
 
+/* ======== FOOTER ======== */
+footer {
+  background: var(--fondo);
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid var(--granate);
+  color: var(--dorado);
+  font-size: 15px;
+}
