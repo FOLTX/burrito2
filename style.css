@@ -171,7 +171,6 @@ section.features{padding:56px 0}
 .illustration svg [stroke="#fff"] { stroke: #f2f2f3; }
 .illustration svg [fill="#8B0000"] { fill: #eb5222; }
 .illustration svg [fill="#e9e6e2"] { fill: #f2f2f3; }
-.illustration svg [fill="#1a1a1a"] { fill: #22223b; }
 .illustration svg,
 .illustration img {
   width: 85%;
@@ -413,5 +412,6 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
