@@ -7,194 +7,7 @@
 
   <!-- Fuente -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=10">
-  <style>
-    /* ===========================
-       VARIABLES DE COLORES & TIPOS
-       =========================== */
-    :root{
-      --nav-gray: #363636;          /* navbar */
-      --bg-navy: #0d111b;          /* fondo principal (azul marino muy oscuro) */
-      --granate: #8B0000;          /* rojo oscuro (botones, acentos) */
-      --illustration-bg: #a1a196;  /* fondo ilustraciones (gris claro) */
-      --card-dark: #1a202c;        /* card contraste */
-      --muted-brown: #3b302c;      /* cuadro de texto más claro */
-      --white: #ffffff;
-      --star-yellow: #FFD700;
-      --star-gray: #cccccc;
-      --pastel-cream: #f6efe6;     /* fondo general si se necesita */
-      --max-width: 1100px;
-      --radius-lg: 16px;
-      --radius-md: 10px;
-      --font: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    }
-
-    /* ===========================
-       RESET & BASE
-       =========================== */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:var(--font);
-      background:var(--bg-navy);
-      color:var(--white);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.45;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--max-width);margin:0 auto;padding:0 5%}
-
-    /* ===========================
-       NAVBAR (Captura 1)
-       =========================== */
-    header.navbar{
-      background:var(--nav-gray);
-      position:sticky;top:0;z-index:50;
-      box-shadow:0 2px 8px rgba(0,0,0,0.3);
-    }
-    .nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:var(--max-width);margin:0 auto;padding:14px 5%}
-    .brand{
-      display:flex;align-items:center;gap:12px;color:var(--white);font-weight:700;font-size:1.05rem;
-    }
-    /* logo icon estilo "pin burrito" simplificado con SVG */
-    .brand svg{width:36px;height:36px;flex-shrink:0}
-    .nav-links{display:flex;gap:22px;align-items:center}
-    .nav-links a{color:var(--white);font-weight:600;opacity:0.95;padding:6px 8px;border-radius:6px}
-    .nav-links a:hover{background:rgba(255,255,255,0.04)}
-    .nav-toggle{display:none;color:var(--white);font-size:1.2rem}
-
-    /* ===========================
-       HERO (Captura 1)
-       =========================== */
-    .hero{
-      background: linear-gradient(rgba(13,17,27,0.85), rgba(13,17,27,0.9)), url('https://i.imgur.com/1n8q8O5.jpg') center/cover no-repeat;
-      padding:60px 0 80px;
-    }
-    .hero .hero-grid{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:start;max-width:var(--max-width);margin:0 auto;padding:0 5%}
-    .hero h1{font-size:2.8rem;margin:0 0 14px;font-weight:800;line-height:1.02}
-    .hero p{max-width:680px;color:rgba(255,255,255,0.92);margin-bottom:18px;font-size:1.05rem}
-    .btn{
-      display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;background:var(--granate);color:var(--white);
-      box-shadow: 0 6px 18px rgba(139,0,0,0.18);
-      transition:transform .18s ease, filter .18s ease;
-    }
-    .btn:hover{transform:translateY(-3px);filter:brightness(1.07)}
-
-    /* Testimonial pequeño debajo del botón (captura 1) */
-    .hero-testimonial{display:flex;gap:18px;align-items:flex-start;margin-top:28px}
-    .stars-row{color:var(--star-yellow);font-size:1rem}
-    .stars-row .empty{color:var(--star-gray)}
-    .testimonial-box{color:var(--white);max-width:360px}
-    .testimonial-box blockquote{margin:8px 0;padding-left:12px;border-left:3px solid var(--granate);font-style:italic;color:rgba(255,255,255,0.95)}
-    .testimonial-author{display:flex;align-items:center;gap:8px;font-weight:600;color:rgba(255,255,255,0.9);margin-top:6px}
-
-    /* ===========================
-       Sección imagen móvil (Captura 2)
-       =========================== */
-    .mobile-preview{padding:48px 0;text-align:center}
-    .phone-frame{display:inline-block;background:transparent;border-radius:20px;padding:14px;border:1px solid rgba(255,255,255,0.06)}
-    .phone-frame img{display:block;width:320px;height:auto;border-radius:14px;box-shadow:0 18px 50px rgba(0,0,0,0.6)}
-
-    /* ===========================
-       FEATURES (Captura 3 & 4)
-       =========================== */
-    section.features{padding:56px 0}
-    .section-header{text-align:center;margin-bottom:30px}
-    .section-header h2{font-size:2.2rem;margin:0 0 6px}
-    .section-header p{color:rgba(255,255,255,0.78);margin:0;font-weight:500}
-
-    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:28px}
-    .two-col .left h3{font-size:1.35rem;margin-bottom:10px}
-    .two-col .left p{color:rgba(255,255,255,0.9)}
-    .two-col .right{display:flex;justify-content:center}
-    .illustration{
-      width:100%;max-width:420px;background:var(--illustration-bg);border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-    }
-    .illustration svg{width:85%;height:auto;display:block}
-
-    /* ===========================
-       RATINGS (Captura 5)
-       =========================== */
-    .ratings{padding:48px 0}
-    .ratings-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
-    .rating-row{display:flex;align-items:center;gap:14px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.03)}
-    .rating-emoji{font-size:1.9rem;width:56px;text-align:center}
-    .rating-stars{font-size:1.2rem;color:var(--star-yellow)}
-    .rating-stars .off{color:var(--star-gray)}
-    .ratings-info{background:var(--muted-brown);padding:18px;border-radius:12px;color:rgba(255,255,255,0.95)}
-
-    /* ===========================
-       TESTIMONIAL GRANDE (Captura 6)
-       =========================== */
-    .big-testimonial{background:var(--granate);padding:64px 0;margin-top:24px;position:relative;overflow:hidden}
-    .big-testimonial::before{
-      content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,0.06) 1px, transparent 1px);background-size:10px 10px;opacity:0.12;pointer-events:none
-    }
-    .big-testimonial .inner{max-width:var(--max-width);margin:0 auto;padding:0 5%;text-align:center;color:var(--white)}
-    .big-testimonial p.quote{font-size:1.6rem;font-weight:700;line-height:1.18;margin:0 0 18px}
-
-    /* ===========================
-       CTA "ÚNETE AL BURRIGO" (Captura 7)
-       =========================== */
-    .cta{padding:80px 0;position:relative}
-    .cta::before{
-      content:"";position:absolute;left:-30px;bottom:0;width:300px;height:300px;background-image:radial-gradient(var(--granate) 0.5px, transparent 0.5px);background-size:15px 15px;opacity:0.1;transform:translateY(40px)
-    }
-    .cta-card{background:var(--card-dark);max-width:780px;margin:0 auto;padding:38px;border-radius:20px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
-    .cta-card h2{font-size:2rem;margin:0 0 12px}
-    .cta-card h2 span{color:var(--granate)}
-    .cta-card p{color:rgba(255,255,255,0.92);font-style:italic;margin-bottom:18px}
-
-    /* ===========================
-       FOOTER
-       =========================== */
-    footer.site-footer{padding:28px 0;text-align:center;color:rgba(255,255,255,0.9);margin-top:36px}
-    .socials{display:flex;gap:14px;justify-content:center;align-items:center;margin:8px 0}
-    .socials a{color:var(--white);padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.03)}
-    .copyright{font-size:0.92rem;opacity:0.9;margin-top:8px}
-
-    /* ===========================
-       FORMULARIOS / LOGIN / COMMENTS
-       =========================== */
-    .card{background:rgba(255,255,255,0.02);padding:18px;border-radius:12px}
-    .form-row{display:flex;gap:10px;align-items:center}
-    .form-row input[type="text"], .form-row input[type="password"], textarea, select{
-      width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--white)
-    }
-    textarea{min-height:90px;resize:vertical}
-    .submit{display:inline-block;padding:10px 16px;border-radius:10px;background:var(--granate);color:var(--white);font-weight:700;border:none;cursor:pointer}
-    .submit:hover{filter:brightness(1.06)}
-    .small-muted{font-size:0.92rem;color:rgba(255,255,255,0.75)}
-
-    /* ===========================
-       STARS AVERAGE (soporta fracciones)
-       =========================== */
-    .avg-stars{position:relative;display:inline-block;font-size:1.15rem;line-height:1}
-    .avg-stars .stars-outer{color:var(--star-gray)}
-    .avg-stars .stars-inner{position:absolute;left:0;top:0;overflow:hidden;white-space:nowrap;color:var(--star-yellow);width:0}
-
-    /* ===========================
-       RESPONSIVE
-       =========================== */
-    @media (max-width:980px){
-      .hero .hero-grid{grid-template-columns:1fr;gap:24px;text-align:center}
-      .hero p{margin-left:auto;margin-right:auto}
-      .mobile-preview{padding-top:28px}
-      .two-col{grid-template-columns:1fr}
-      .ratings-grid{grid-template-columns:1fr}
-      .nav-links{display:none}
-      .nav-toggle{display:block}
-    }
-    @media (max-width:520px){
-      .hero h1{font-size:1.8rem}
-      .cta-card{padding:22px}
-      .illustration{padding:12px}
-    }
-  </style>
-
+  <link rel="stylesheet" href="style.css?v=11">
 </head>
 <body>
 
@@ -202,7 +15,6 @@
   <header class="navbar" role="banner">
     <div class="nav-inner">
       <a class="brand" href="#">
-        <!-- icono "pin burrito" simplificado SVG -->
         <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="#f08c00"/><stop offset="1" stop-color="#f45d2a"/></linearGradient></defs>
           <path d="M32 2C20 2 10 12 10 24c0 13.6 16.4 33.6 19.2 36.8a3 3 0 0 0 4.6 0C37.6 57.6 54 37.6 54 24 54 12 44 2 32 2z" fill="url(#g)"/>
@@ -231,14 +43,13 @@
         <!-- Testimonial pequeño -->
         <div class="hero-testimonial">
           <div class="stars-row" aria-hidden="true">
-            <!-- 4 llenas + 1 vacía -->
             ★★★★<span class="empty">☆</span>
           </div>
           <div class="testimonial-box">
             <div class="small-muted">Usuarios felices · Servicio confiable</div>
             <blockquote>"El sistema es muy fácil de usar y confiable."</blockquote>
             <div class="testimonial-author">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="opacity:0.95"><circle cx="12" cy="8" r="3" fill="white"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="white" /></svg>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" fill="white"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="white" /></svg>
               <span>Salazar Mora</span>
             </div>
           </div>
@@ -246,9 +57,9 @@
       </div>
 
       <!-- Columna derecha: imagen / pequeño resumen -->
-      <aside aria-hidden="true" style="text-align:center">
-        <div style="background:rgba(255,255,255,0.03);padding:16px;border-radius:14px;max-width:360px;margin:0 auto">
-          <img src="https://i.imgur.com/g0tQkYc.png" alt="Vista previa app - móvil" style="width:100%;border-radius:10px;display:block">
+      <aside class="hero-aside" aria-hidden="true">
+        <div class="hero-aside-box">
+          <img src="https://i.imgur.com/g0tQkYc.png" alt="Vista previa app - móvil">
         </div>
       </aside>
     </div>
@@ -270,14 +81,13 @@
       <p>Descubre por qué elegirnos</p>
     </div>
 
-    <div class="two-col" aria-hidden="false">
+    <div class="two-col">
       <div class="left">
         <h3>Localización precisa</h3>
         <p>La herramienta utiliza información actualizada para mostrar con exactitud la ubicación del Burrito Interno en el mapa, ofreciendo una experiencia confiable y clara.</p>
       </div>
       <div class="right">
         <div class="illustration" aria-hidden="true">
-          <!-- Ilustración simple tipo mapa (SVG) -->
           <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg">
             <rect x="6" y="8" width="188" height="124" rx="8" fill="#fff" opacity="0.12"/>
             <g transform="translate(18,14)" fill="none" stroke="#fff" stroke-opacity="0.7" stroke-width="2">
@@ -293,14 +103,13 @@
     </div>
 
     <!-- Ahorro de tiempo (Captura 4) -->
-    <div class="two-col" style="margin-top:36px">
+    <div class="two-col two-col-second">
       <div class="left">
         <h3>Ahorro de tiempo</h3>
         <p>Consulta fácilmente la posición actual del transporte y organiza mejor tus horarios para llegar puntual a clases o actividades dentro del campus.</p>
       </div>
       <div class="right">
-        <div class="illustration" aria-hidden="true" style="background:var(--illustration-bg)">
-          <!-- ícono person running -->
+        <div class="illustration illustration-light" aria-hidden="true">
           <svg viewBox="0 0 100 100" width="80" height="80" fill="#1a1a1a" aria-hidden="true">
             <rect x="6" y="10" width="88" height="72" rx="6" fill="#e9e6e2"/>
             <g transform="translate(18,22)" fill="#1a1a1a">
@@ -314,18 +123,18 @@
 
   <!-- RATINGS (Captura 5) -->
   <section class="ratings container" aria-labelledby="ratings-title">
-    <h2 id="ratings-title" style="color:var(--white)">Sistema de calificación</h2>
+    <h2 id="ratings-title" class="ratings-title">Sistema de calificación</h2>
 
-    <div style="display:flex;align-items:center;gap:16px;margin-top:10px">
-      <div style="font-weight:700;color:var(--white)">Promedio:</div>
+    <div class="ratings-avg">
+      <div class="ratings-avg-label">Promedio:</div>
       <div class="avg-stars" title="Promedio" aria-hidden="true">
         <div class="stars-outer">★★★★★</div>
         <div class="stars-inner" id="stars-inner">★★★★★</div>
       </div>
-      <div id="avg-score" class="small-muted" style="margin-left:8px;color:rgba(255,255,255,0.9)">(0.0)</div>
+      <div id="avg-score" class="small-muted ratings-avg-score">(0.0)</div>
     </div>
 
-    <div style="height:18px"></div>
+    <div class="ratings-spacer"></div>
 
     <div class="ratings-grid">
       <!-- left: las 5 filas con emojis y estrellas -->
@@ -334,43 +143,43 @@
         <div class="rating-row">
           <div class="rating-emoji" aria-hidden="true">😁</div>
           <div>
-            <div style="font-weight:700">Excelente</div>
+            <div class="rating-label">Excelente</div>
             <div class="rating-stars" aria-hidden="true">★★★★★</div>
           </div>
         </div>
 
         <!-- fila 4 -->
-        <div class="rating-row" style="margin-top:12px">
+        <div class="rating-row rating-row-gap">
           <div class="rating-emoji">🙂</div>
           <div>
-            <div style="font-weight:700">Muy bueno</div>
+            <div class="rating-label">Muy bueno</div>
             <div class="rating-stars"><span>★★★★</span><span class="off">☆</span></div>
           </div>
         </div>
 
         <!-- fila 3 -->
-        <div class="rating-row" style="margin-top:12px">
+        <div class="rating-row rating-row-gap">
           <div class="rating-emoji">😐</div>
           <div>
-            <div style="font-weight:700">Regular</div>
+            <div class="rating-label">Regular</div>
             <div class="rating-stars"><span>★★★</span><span class="off">☆☆</span></div>
           </div>
         </div>
 
         <!-- fila 2 -->
-        <div class="rating-row" style="margin-top:12px">
+        <div class="rating-row rating-row-gap">
           <div class="rating-emoji">☹️</div>
           <div>
-            <div style="font-weight:700">Insuficiente</div>
+            <div class="rating-label">Insuficiente</div>
             <div class="rating-stars"><span>★★</span><span class="off">☆☆☆</span></div>
           </div>
         </div>
 
         <!-- fila 1 -->
-        <div class="rating-row" style="margin-top:12px">
+        <div class="rating-row rating-row-gap">
           <div class="rating-emoji">😡</div>
           <div>
-            <div style="font-weight:700">Malo</div>
+            <div class="rating-label">Malo</div>
             <div class="rating-stars"><span>★</span><span class="off">☆☆☆☆</span></div>
           </div>
         </div>
@@ -379,23 +188,23 @@
       <!-- right: explicación y caja de envío -->
       <div>
         <div class="ratings-info">
-          <h3 style="margin-top:0">Sistema de calificación</h3>
+          <h3 class="ratings-info-title">Sistema de calificación</h3>
           <p>Los estudiantes pueden calificar el servicio, lo que nos ayuda a mejorar continuamente. Las calificaciones se muestran en tiempo real para mantener la transparencia.</p>
 
           <!-- Formulario de comentarios (simulado) -->
-          <div style="margin-top:14px">
-            <label class="small-muted">Usuario (simulado)</label>
-            <div class="form-row" style="margin-top:8px;">
+          <div class="ratings-form">
+            <label class="small-muted ratings-form-label">Usuario (simulado)</label>
+            <div class="form-row ratings-form-row">
               <input id="input-user" type="text" placeholder="Tu nombre (ej: Juan Pérez)">
             </div>
 
-            <label class="small-muted" style="margin-top:10px;display:block">Comentario</label>
-            <div style="margin-top:8px">
+            <label class="small-muted ratings-form-label">Comentario</label>
+            <div class="ratings-form-row">
               <textarea id="input-comment" placeholder="Escribe tu opinión..."></textarea>
             </div>
 
-            <label class="small-muted" style="margin-top:10px;display:block">Calificación</label>
-            <div style="margin-top:8px" class="form-row">
+            <label class="small-muted ratings-form-label">Calificación</label>
+            <div class="form-row ratings-form-row">
               <select id="input-rating">
                 <option value="5">5 ★★★★★</option>
                 <option value="4">4 ★★★★☆</option>
@@ -411,7 +220,7 @@
     </div>
 
     <!-- lista de comentarios -->
-    <div id="comments-list" style="margin-top:20px"></div>
+    <div id="comments-list"></div>
 
   </section>
 
@@ -419,9 +228,9 @@
   <section class="big-testimonial" aria-label="testimonio">
     <div class="inner">
       <p class="quote">"Me encanta cómo puedo ver la ubicación del transporte en tiempo real y planificar mi día de manera más eficiente. El sistema de calificación también es una gran adición."</p>
-      <div style="display:flex;justify-content:center;align-items:center;gap:10px">
+      <div class="testimonial-author-big">
         <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3" fill="#fff"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="#fff"/></svg>
-        <div style="font-weight:700;color:var(--white)">Graham Thompson</div>
+        <div class="testimonial-author-name">Graham Thompson</div>
       </div>
     </div>
   </section>
@@ -448,63 +257,7 @@
     </div>
   </footer>
 
-  <!-- ===========================
-       SCRIPTS: INTERACTIVIDAD Y STORAGE
-       =========================== -->
-<script>
-    /* Menú responsive */
-    function toggleMenu(btn){
-      const links = document.querySelector('.nav-links');
-      if(links.style.display === 'flex'){
-        links.style.display = 'none';
-      } else {
-        links.style.display = 'flex';
-        links.style.flexDirection = 'column';
-        links.style.background = 'var(--nav-gray)';
-        links.style.padding = '12px';
-      }
-    }
-
-    /* Sistema de calificaciones */
-    let ratings = [];
-    function submitComment(){
-      const user = document.getElementById("input-user").value.trim();
-      const comment = document.getElementById("input-comment").value.trim();
-      const rating = parseInt(document.getElementById("input-rating").value);
-
-      if(!user || !comment){
-        alert("Completa tu nombre y comentario.");
-        return;
-      }
-
-      ratings.push(rating);
-      updateAverage();
-
-      const list = document.getElementById("comments-list");
-      const div = document.createElement("div");
-      div.className = "card";
-      div.style.marginBottom = "12px";
-      div.innerHTML = `
-        <strong>${user}</strong> — <span style="color:var(--star-yellow)">★`.repeat(rating) +
-        `<span style="color:var(--star-gray)">☆`.repeat(5-rating) +
-        `</span><br>
-        <p style="margin:6px 0 0">${comment}</p>
-      `;
-      list.prepend(div);
-
-      document.getElementById("input-user").value = "";
-      document.getElementById("input-comment").value = "";
-      document.getElementById("input-rating").value = "5";
-    }
-
-    function updateAverage(){
-      const avg = ratings.reduce((a,b)=>a+b,0) / ratings.length;
-      const percent = (avg/5)*100;
-
-      document.getElementById("avg-score").innerText = `(${avg.toFixed(1)})`;
-      document.getElementById("stars-inner").style.width = percent + "%";
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
