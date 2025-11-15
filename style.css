@@ -46,6 +46,16 @@ a:hover {
    NAVBAR
    =========================== */
    /*BARRA SUPERIOR DE LA PAGINA*/
+.logo-custom {
+  /* Prueba con este tamaño */
+  height: 40px; 
+  
+  /* Poner "auto" en el ancho asegura que la imagen no se deforme */
+  width: auto; 
+
+  /* Esto es opcional, para separarlo del texto "Burrito Go" */
+  margin-right: 8px; 
+}
 header.navbar{
   background: #800000;
   position:sticky;top:0;z-index:50;
@@ -403,5 +413,6 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
