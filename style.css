@@ -80,7 +80,7 @@ header.navbar{
    HERO
    =========================== */
 .hero{
-  background: linear-gradient(rgba(34,34,59,0.85), rgba(34,34,59,0.9)), url('https://i.imgur.com/1n8q8O5.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('img/Captura de pantalla 2025-11-14 191853.png') center/cover no-repeat;
   padding:60px 0 80px;
   color: #f2f2f3;
 }
@@ -403,4 +403,5 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
