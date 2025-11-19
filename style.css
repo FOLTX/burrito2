@@ -170,25 +170,81 @@ header.navbar{
 /* ===========================
    FEATURES
    =========================== */
-section.features{padding:56px 0}
-.section-header{text-align:center;margin-bottom:30px}
-.section-header h2{font-size:2.2rem;margin:0 0 6px}
-.section-header p{
-  color: rgba(34, 34, 59, 0.78);
-  margin:0;font-weight:500
+/* ===========================
+   FEATURES (Sección con fondo de imagen)
+   =========================== */
+section.features {
+  padding: 56px 0;
+  
+  /* --- FONDO DE IMAGEN --- */
+  /* Cambia 'img/tu-fondo-ventajas.jpg' por el nombre de tu archivo real */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                    url('img/fondo2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Color base del texto en blanco para que resalte */
+  color: #f2f2f3; 
 }
 
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;margin-top:28px}
-.two-col .left h3{font-size:1.35rem;margin-bottom:10px}
-.two-col .left p{color:#22223b}
-.two-col .right{display:flex;justify-content:center}
-.illustration{
-  width:100%;max-width:420px;
-  background:#22223b;
-  border-radius:12px;padding:18px;display:flex;align-items:center;justify-content:center;
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 2.2rem;
+  margin: 0 0 6px;
+  color: #f2f2f3; /* Título en blanco */
+}
+
+.section-header p {
+  color: rgba(242, 243, 243, 0.85); /* Subtítulo en blanco suave */
+  margin: 0;
+  font-weight: 500;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  align-items: center;
+  margin-top: 28px;
+}
+
+.two-col .left h3 {
+  font-size: 1.35rem;
+  margin-bottom: 10px;
+  color: #f2f2f3; /* Títulos de ventajas en blanco */
+}
+
+.two-col .left p {
+  color: rgba(242, 243, 243, 0.9); /* Texto de párrafo en blanco */
+}
+
+.two-col .right {
+  display: flex;
+  justify-content: center;
+}
+
+.illustration {
+  width: 100%;
+  max-width: 420px;
+  background: #22223b; /* Fondo oscuro para la ilustración */
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0 8px 24px rgba(34, 34, 59, 0.12);
 }
-.illustration svg{width:85%;height:auto;display:block}
+
+.illustration svg {
+  width: 85%;
+  height: auto;
+  display: block;
+}
 
 /* Estilos para SVGs de ilustraciones */
 .illustration svg [fill="#fff"] { fill: #f2f2f3; }
@@ -198,14 +254,13 @@ section.features{padding:56px 0}
 .illustration svg [fill="#1a1a1a"] { fill: #22223b; }
 
 /* Two Col Second */
-.two-col-second{
+.two-col-second {
   margin-top: 36px;
 }
 
-.illustration-light{
-  background: #ffffff;
+.illustration-light {
+  background: #ffffff; /* Caja blanca para la segunda ilustración */
 }
-
 /* ===========================
    RATINGS
    =========================== */
@@ -430,6 +485,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
