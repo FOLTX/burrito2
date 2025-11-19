@@ -283,9 +283,7 @@ section.features {
   margin-top: 36px;
 }
 
-.illustration-light {
-  background: #ffffff; /* Fondo blanco para la segunda caja */
-}
+
 /* ===========================
    RATINGS
    =========================== */
@@ -510,6 +508,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
