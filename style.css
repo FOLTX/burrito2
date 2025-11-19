@@ -138,16 +138,33 @@ header.navbar{
 /* ===========================
    Sección imagen móvil
    =========================== */
-.mobile-preview{padding:48px 0;text-align:center}
-.phone-frame{
-  display:inline-block;
-  background:#ffffff;
-  border-radius:20px;padding:14px;
-  border:1px solid #d9d9db;
+/* ===========================
+   Sección imagen móvil (MODIFICADA)
+   =========================== */
+.mobile-preview {
+  padding: 48px 0;
+  text-align: center;
+
+  /* --- INICIO DEL FONDO NUEVO --- */
+  /* Esto pone una capa negra semitransparente sobre la imagen */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                    url('img/fondo2.jpg'); /* <--- ¡IMPORTANTE: Pon aquí el nombre real de tu foto! */
+
+  background-size: cover;       /* Hace que la imagen cubra todo */
+  background-position: center;  /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que se repita como mosaico */
+  /* --- FIN DEL FONDO NUEVO --- */
 }
-.phone-frame img{
-  display:block;width:320px;height:auto;border-radius:14px;
-  box-shadow: 0 20px 60px rgba(34, 34, 59, 0.18);
+
+.phone-frame {
+  display: inline-block;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 14px;
+  border: 1px solid #d9d9db;
+  
+  /* Opcional: Añade una sombra más fuerte para que el celular "flote" sobre el fondo */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); 
 }
 
 /* ===========================
@@ -413,6 +430,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
