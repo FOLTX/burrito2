@@ -366,7 +366,7 @@ section.features {
    TESTIMONIAL GRANDE
    =========================== */
 .big-testimonial{
-  background:#22223b;
+  background:#5e0812;
   padding:64px 0;margin-top:24px;position:relative;overflow:hidden
 }
 .big-testimonial::before{
@@ -507,6 +507,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
