@@ -171,20 +171,16 @@ header.navbar{
    FEATURES
    =========================== */
 /* ===========================
-   FEATURES (Sección con fondo de imagen)
+   FEATURES (Sección con fondo de COLOR SÓLIDO)
    =========================== */
 section.features {
   padding: 56px 0;
   
-  /* --- FONDO DE IMAGEN --- */
-  /* Cambia 'img/tu-fondo-ventajas.jpg' por el nombre de tu archivo real */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                    url('img/fondo2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* --- AQUÍ ESTÁ EL CAMBIO --- */
+  background-color: #22223b; /* Color azul oscuro sólido */
+  /* Ya no usamos background-image */
   
-  /* Color base del texto en blanco para que resalte */
+  /* Color del texto blanco para que se lea sobre el fondo oscuro */
   color: #f2f2f3; 
 }
 
@@ -196,11 +192,11 @@ section.features {
 .section-header h2 {
   font-size: 2.2rem;
   margin: 0 0 6px;
-  color: #f2f2f3; /* Título en blanco */
+  color: #f2f2f3; /* Título blanco */
 }
 
 .section-header p {
-  color: rgba(242, 243, 243, 0.85); /* Subtítulo en blanco suave */
+  color: rgba(242, 243, 243, 0.85); /* Subtítulo blanco suave */
   margin: 0;
   font-weight: 500;
 }
@@ -216,11 +212,11 @@ section.features {
 .two-col .left h3 {
   font-size: 1.35rem;
   margin-bottom: 10px;
-  color: #f2f2f3; /* Títulos de ventajas en blanco */
+  color: #f2f2f3; /* Títulos blanco */
 }
 
 .two-col .left p {
-  color: rgba(242, 243, 243, 0.9); /* Texto de párrafo en blanco */
+  color: rgba(242, 243, 243, 0.9); /* Párrafos blanco */
 }
 
 .two-col .right {
@@ -231,13 +227,15 @@ section.features {
 .illustration {
   width: 100%;
   max-width: 420px;
-  background: #22223b; /* Fondo oscuro para la ilustración */
+  /* Como el fondo general ya es oscuro (#22223b), hacemos la caja de la ilustración
+     un poco más clara o transparente para que se note la diferencia */
+  background: rgba(255, 255, 255, 0.05); 
   border-radius: 12px;
   padding: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(34, 34, 59, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .illustration svg {
@@ -259,7 +257,7 @@ section.features {
 }
 
 .illustration-light {
-  background: #ffffff; /* Caja blanca para la segunda ilustración */
+  background: #ffffff; /* Esta se mantiene blanca para contrastar */
 }
 /* ===========================
    RATINGS
@@ -485,6 +483,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
