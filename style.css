@@ -282,7 +282,9 @@ section.features {
 .two-col-second {
   margin-top: 36px;
 }
-
+.illustration img {
+  border: 5px solid red;
+}
 
 /* ===========================
    RATINGS
@@ -508,6 +510,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
