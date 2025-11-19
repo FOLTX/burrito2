@@ -247,45 +247,42 @@ section.features {
 /* ===========================
    ESTILOS DE LAS ILUSTRACIONES (Actualizado para IMG)
    =========================== */
+/* ===========================
+   ESTILOS DE LAS ILUSTRACIONES (Limpios, sin bordes ni fondos)
+   =========================== */
 
-/* El contenedor cuadrado se queda igual para mantener el orden */
 .illustration {
   width: 100%;
   max-width: 420px;
-  /* Fondo sutil sobre tu fondo oscuro principal */
-  background: rgba(255, 255, 255, 0.05); 
-  border-radius: 12px;
-  padding: 18px; 
+  
+  /* CAMBIO: Ponemos el fondo transparente para que no se vea NADA detrás */
+  background: transparent; 
+  
+  /* CAMBIO: Quitamos la sombra para que no haya borde brillante */
+  box-shadow: none;
+  border: none; /* Nos aseguramos de que no haya bordes */
+
+  padding: 10px; /* Reducimos un poco el padding */
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  
-  /* Esto asegura que si la imagen es muy alta, no rompa el sitio */
   overflow: hidden; 
 }
 
-/* --- AQUÍ ESTÁ EL CAMBIO CLAVE --- */
-/* Controlamos la imagen para que ocupe el espacio del antiguo SVG */
 .illustration img {
-  width: 100%;      /* Ocupa el ancho disponible */
-  height: auto;     /* Mantiene su proporción original */
+  width: 100%;
+  height: auto;
   display: block;
-  object-fit: contain; /* Asegura que la imagen se vea completa sin recortes */
-  border-radius: 8px;  /* Bordes redondeados opcionales */
+  object-fit: contain;
+  /* Opcional: Si quieres que la IMAGEN tenga esquinas redondas, deja esto. 
+     Si no, bórralo. */
+  border-radius: 8px; 
 }
 
-/* Esto borra los estilos viejos de SVG que ya no sirven */
-/* (Ya no necesitamos .illustration svg fill/stroke...) */
-
-/* Two Col Second */
-.two-col-second {
-  margin-top: 36px;
+/* Aseguramos que la segunda caja tampoco tenga fondo */
+.illustration-light {
+  background: transparent;
 }
-.illustration img {
-  border: 5px solid red;
-}
-
 /* ===========================
    RATINGS
    =========================== */
@@ -510,6 +507,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
