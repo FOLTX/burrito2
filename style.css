@@ -244,12 +244,39 @@ section.features {
   display: block;
 }
 
-/* Estilos para SVGs de ilustraciones */
-.illustration svg [fill="#fff"] { fill: #f2f2f3; }
-.illustration svg [stroke="#fff"] { stroke: #f2f2f3; }
-.illustration svg [fill="#8B0000"] { fill: #eb5222; }
-.illustration svg [fill="#e9e6e2"] { fill: #f2f2f3; }
-.illustration svg [fill="#1a1a1a"] { fill: #22223b; }
+/* ===========================
+   ESTILOS DE LAS ILUSTRACIONES (Actualizado para IMG)
+   =========================== */
+
+/* El contenedor cuadrado se queda igual para mantener el orden */
+.illustration {
+  width: 100%;
+  max-width: 420px;
+  /* Fondo sutil sobre tu fondo oscuro principal */
+  background: rgba(255, 255, 255, 0.05); 
+  border-radius: 12px;
+  padding: 18px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  
+  /* Esto asegura que si la imagen es muy alta, no rompa el sitio */
+  overflow: hidden; 
+}
+
+/* --- AQUÍ ESTÁ EL CAMBIO CLAVE --- */
+/* Controlamos la imagen para que ocupe el espacio del antiguo SVG */
+.illustration img {
+  width: 100%;      /* Ocupa el ancho disponible */
+  height: auto;     /* Mantiene su proporción original */
+  display: block;
+  object-fit: contain; /* Asegura que la imagen se vea completa sin recortes */
+  border-radius: 8px;  /* Bordes redondeados opcionales */
+}
+
+/* Esto borra los estilos viejos de SVG que ya no sirven */
+/* (Ya no necesitamos .illustration svg fill/stroke...) */
 
 /* Two Col Second */
 .two-col-second {
@@ -257,7 +284,7 @@ section.features {
 }
 
 .illustration-light {
-  background: #ffffff; /* Esta se mantiene blanca para contrastar */
+  background: #ffffff; /* Fondo blanco para la segunda caja */
 }
 /* ===========================
    RATINGS
@@ -483,6 +510,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
