@@ -250,19 +250,23 @@ section.features {
 /* ===========================
    ESTILOS DE LAS ILUSTRACIONES (Limpios, sin bordes ni fondos)
    =========================== */
+/* ===========================
+   ESTILOS DE LAS ILUSTRACIONES (VERSIÓN LIMPIA SIN RECUADROS)
+   =========================== */
 
 .illustration {
   width: 100%;
   max-width: 420px;
   
-  /* CAMBIO: Ponemos el fondo transparente para que no se vea NADA detrás */
+  /* CAMBIO 1: Fondo transparente para que no se vea el recuadro */
   background: transparent; 
   
-  /* CAMBIO: Quitamos la sombra para que no haya borde brillante */
+  /* CAMBIO 2: Quitamos la sombra y el borde */
   box-shadow: none;
-  border: none; /* Nos aseguramos de que no haya bordes */
+  border: none;
+  border-radius: 0;
 
-  padding: 10px; /* Reducimos un poco el padding */
+  padding: 10px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -274,15 +278,16 @@ section.features {
   height: auto;
   display: block;
   object-fit: contain;
-  /* Opcional: Si quieres que la IMAGEN tenga esquinas redondas, deja esto. 
-     Si no, bórralo. */
-  border-radius: 8px; 
 }
 
-/* Aseguramos que la segunda caja tampoco tenga fondo */
+/* CAMBIO 3: Forzamos a la segunda ilustración a ser transparente también */
 .illustration-light {
-  background: transparent;
+  background: transparent !important;
+  box-shadow: none !important;
 }
+
+/* (El código viejo de los SVG ya no lo necesitas, puedes borrarlo si quieres) */
+.illustration svg { display: none; }
 /* ===========================
    RATINGS
    =========================== */
@@ -507,6 +512,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
