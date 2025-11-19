@@ -25,7 +25,7 @@ html,body{height:100%}
 body{
   margin:0;
   font-family:"Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: #700606;
+  background: #706f6f;
   color:#000001;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
@@ -507,6 +507,7 @@ textarea{min-height:90px;resize:vertical}
   .cta-card{padding:22px}
   .illustration{padding:12px}
 }
+
 
 
 
